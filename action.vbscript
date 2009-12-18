@@ -1,0 +1,25 @@
+  Dim xml, sURL, sRequest, result, userID, userKey
+   
+    ' put your real userID and userKey below
+    userID = "0"
+    userKey = "your_key"
+   
+    xml = "<?xml version=""1.0""?>" & VbCrLf
+    xml = xml & "<query>" & VbCrLf
+    xml = xml & "<userid>" & userID & "</userid>" & VbCrLf
+    xml = xml & "<userkey>" & userKey & "</userkey>" & VbCrLf
+    xml = xml & "<action>" & "GetMediaList" & "</action>" & VbCrLf
+    xml = xml & "</query>" & VbCrLf
+   
+    sUrl = "http://manage.encoding.com"
+    sRequest = "xml=" & xml
+    result = HTTPPost(sUrl, sRequest)
+   
+    Function HTTPPost(sUrl, sRequest)
+      Set oHTTP = CreateObject("Microsoft.XMLHTTP")
+      oHTTP.open "POST", sUrl,false
+      oHTTP.setRequestHeader "Content-Type", "application/x-www-form-urlencoded"
+      oHTTP.setRequestHeader "Content-Length", Len(sRequest)
+      oHTTP.send sRequest
+      HTTPPost = oHTTP.responseText
+    End Function
