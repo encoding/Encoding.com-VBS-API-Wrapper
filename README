@@ -8,10 +8,9 @@ Requires a API Key and User ID from Encoding.com.  30day adn 1GB free trial avai
 Examples:
 	Dim xml, sURL, sRequest, result, userID, userKey
    
-    ' put your real userID and userKey below
     userID = "777"
     userKey = "277e0d0sdfaaa9140a27c03419f5era"
-   
+        
     xml = "<?xml version=""1.0""?>" & VbCrLf
     xml = xml & "<query>" & VbCrLf
     xml = xml & "<userid>" & userID & "</userid>" & VbCrLf
