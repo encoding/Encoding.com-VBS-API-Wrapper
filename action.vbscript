@@ -3,7 +3,7 @@
     ' put your real userID and userKey below
     userID = "0"
     userKey = "your_key"
-   
+            
     xml = "<?xml version=""1.0""?>" & VbCrLf
     xml = xml & "<query>" & VbCrLf
     xml = xml & "<userid>" & userID & "</userid>" & VbCrLf
